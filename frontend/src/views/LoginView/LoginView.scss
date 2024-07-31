@@ -1,0 +1,111 @@
+@import "../../styles/utils/colors";
+@import "../../styles/utils/breakpoints";
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+
+  &__container {
+    align-items: center;
+    background-image: url('../../assets/images/wallpaper.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    &--left {
+      align-items: start;
+      background-image: url('../../assets/images/wallpaper.jpg');
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 30px;
+      width: 50%;
+    }
+    &--right {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+    }
+
+    &--actions {
+      display: flex;
+      margin-bottom: 20px;
+      justify-content: space-between;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    padding: 5px;
+    width: 800px;
+  }
+
+  &__label {
+    color: $white;
+  }
+
+  &__form {
+    width: 300px;
+  }
+
+  &__container-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &--title {
+      font-size: 40px;
+      font-weight: 700;
+    }
+    &--description {
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    &--guess {
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    &--forgot {
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .login {
+    &__container {
+      &--left {
+        display: none;
+      }
+      &--right {
+        width: 100%;
+      }
+    }
+
+    &__card {
+      margin: 0 20px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+
+}

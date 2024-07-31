@@ -1,0 +1,12 @@
+@import "../../../styles/utils/colors";
+@import "../../../styles/utils/variables";
+
+.super-button {
+  background-color: $black-button;
+  border: 1px solid $black-button;
+  border-radius: $br-sm;
+  color: $white;
+  cursor: pointer;
+  height: $height-input;
+  width: 100%;
+}

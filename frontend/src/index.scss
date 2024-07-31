@@ -1,0 +1,44 @@
+.app,
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  overflow-y: hidden;
+  padding: 0;
+  width: 100%;
+}
+#root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// light
+body {
+  --color-background: #F5F5F5;
+  --color-background-secondary: #FFFFFF;
+  --color-text: #000000;
+  --color-button: #004577;
+  --color-button-text: #FFFFFF;
+  --color-link: #004577;
+
+  /*Button*/
+  --color-button-disabled: #D3D3D3;
+  --color-button-active: #00325A;
+}
+
+// dark
+body.dark {
+  --color-background: #1B1B1E;
+  --color-background-secondary: #252429;
+  --color-text: #FFFFFF;
+  --color-button: #004577;
+  --color-button-text: #FFFFFF;
+  --color-link: #004577;
+
+  /*Button*/
+  --color-button-disabled: #D3D3D3;
+  --color-button-active: #00325A;
+}
