@@ -1,5 +1,5 @@
 export interface ILanguage {
-  es: string,
+  es: string
   en: string
 }
 

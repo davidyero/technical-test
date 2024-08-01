@@ -1,13 +1,13 @@
-import {loginService} from "../services/auth.ts";
-import {useContext} from "react";
-import {AuthContext} from "../context/AuthContext.tsx";
-import {useLocalStorage} from "./useLocalStorage.ts";
+import { loginService } from '../services/auth.ts'
+import { useContext } from 'react'
+import { AuthContext } from '../context/AuthContext.tsx'
+import { useLocalStorage } from './useLocalStorage.ts'
 
 export const useAuth = () => {
-  const {setAuth} = useContext(AuthContext);
-  const {clear} = useLocalStorage();
+  const { setAuth } = useContext(AuthContext)
+  const { clear } = useLocalStorage()
   const login = async (email: string, password: string) => {
-  return await loginService(email, password);
+    return await loginService(email, password)
   }
 
   const logout = () => {
@@ -15,11 +15,11 @@ export const useAuth = () => {
       isGuess: false,
       isLogged: false,
     })
-    clear();
+    clear()
   }
 
   return {
     login,
-    logout
+    logout,
   }
 }

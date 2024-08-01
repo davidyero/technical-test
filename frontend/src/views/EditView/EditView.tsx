@@ -3,5 +3,5 @@ export const EditView = () => {
     <div>
       <h1>EditView</h1>
     </div>
-  );
+  )
 }

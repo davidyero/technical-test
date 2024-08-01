@@ -1,6 +1,6 @@
 export interface SuperButtonProps {
-  text: string;
-  onClick: () => void;
-  className?: string;
-  isDisabled?: boolean;
+  text: string
+  onClick: () => void
+  className?: string
+  isDisabled?: boolean
 }

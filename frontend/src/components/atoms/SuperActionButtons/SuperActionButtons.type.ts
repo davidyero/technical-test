@@ -1,3 +1,3 @@
 export interface SuperActionButtonsProps {
-  productId: string;
+  productId: string
 }

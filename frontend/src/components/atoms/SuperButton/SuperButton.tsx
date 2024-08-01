@@ -1,21 +1,29 @@
-import {SuperButtonProps} from "./SuperButton.type.ts";
-import "./SuperButton.scss";
+import { SuperButtonProps } from './SuperButton.type.ts'
+import './SuperButton.scss'
 
-export const SuperButton = ({onClick, isDisabled, text, className}: SuperButtonProps) => {
-
+export const SuperButton = ({
+  onClick,
+  isDisabled,
+  text,
+  className,
+}: SuperButtonProps) => {
   const handleClick = () => {
-    console.log("Button clicked");
+    console.log('Button clicked')
     if (isDisabled) {
-      return;
+      return
     }
     if (onClick) {
-      onClick();
+      onClick()
     }
   }
 
   return (
-    <button className={`super-button ${className} ${isDisabled ? 'super-button__disabled' : ''}`} onClick={handleClick} disabled={isDisabled}>
+    <button
+      className={`super-button ${className} ${isDisabled ? 'super-button__disabled' : ''}`}
+      onClick={handleClick}
+      disabled={isDisabled}
+    >
       {text}
     </button>
-  );
+  )
 }

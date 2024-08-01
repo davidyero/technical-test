@@ -1,5 +1,5 @@
-import {IProducts} from "../../../shared/interfaces/IProducts.ts";
+import { IProducts } from '../../../shared/interfaces/IProducts.ts'
 
 export interface SuperCardProductProps {
-  product: IProducts;
+  product: IProducts
 }

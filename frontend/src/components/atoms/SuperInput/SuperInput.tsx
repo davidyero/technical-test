@@ -1,10 +1,10 @@
-import {SuperInputProps} from "./SuperInput.type.ts";
-import "./SuperInput.scss";
+import { SuperInputProps } from './SuperInput.type.ts'
+import './SuperInput.scss'
 
 export const SuperInput = (props: SuperInputProps) => {
   return (
-    <div className="super-input--container">
-      <label className="super-input__label">{props.label}</label>
+    <div className='super-input--container'>
+      <label className='super-input__label'>{props.label}</label>
       <input
         className={`super-input ${props.className}`}
         type={props.type}
@@ -13,5 +13,5 @@ export const SuperInput = (props: SuperInputProps) => {
         onChange={props.onChange}
       />
     </div>
-  );
+  )
 }

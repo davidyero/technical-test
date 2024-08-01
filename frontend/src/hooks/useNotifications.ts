@@ -1,8 +1,12 @@
-import { Store } from 'react-notifications-component';
-import {NOTIFICATION_TYPE} from "react-notifications-component/dist/src/typings";
+import { Store } from 'react-notifications-component'
+import { NOTIFICATION_TYPE } from 'react-notifications-component/dist/src/typings'
 
 export const useNotifications = () => {
-  const showNotification = (title: string, message: string, type: NOTIFICATION_TYPE) => {
+  const showNotification = (
+    title: string,
+    message: string,
+    type: NOTIFICATION_TYPE
+  ) => {
     Store.addNotification({
       title: title,
       message: message,
@@ -13,12 +17,12 @@ export const useNotifications = () => {
       animationOut: ['animate__animated', 'animate__fadeOut'],
       dismiss: {
         duration: 3000,
-        onScreen: true
-      }
-    });
+        onScreen: true,
+      },
+    })
   }
 
   return {
-    showNotification
+    showNotification,
   }
 }

@@ -1,11 +1,11 @@
-import {useTranslation} from "react-i18next";
-import './SuperLoader.scss';
+import { useTranslation } from 'react-i18next'
+import './SuperLoader.scss'
 
 export const SuperLoader = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation()
   return (
-    <div className="loader">
-      <label className="loader__text">{t('loading')}</label>
+    <div className='loader'>
+      <label className='loader__text'>{t('loading')}</label>
     </div>
   )
 }

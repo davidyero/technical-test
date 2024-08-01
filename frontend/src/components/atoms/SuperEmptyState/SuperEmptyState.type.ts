@@ -1,3 +1,3 @@
 export interface SuperEmptyStateProps {
-  text: string;
+  text: string
 }
