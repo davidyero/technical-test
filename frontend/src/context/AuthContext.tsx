@@ -1,12 +1,14 @@
 import React, {createContext, useState, Dispatch, SetStateAction} from 'react';
-import {UserOAuthType} from "../shared/interfaces/IUser.ts";
+import {IUser} from "../shared/interfaces/IUser.ts";
 
 export interface AuthContextInterface {
   isLogged: boolean;
-  user?: UserOAuthType;
+  isGuess: boolean;
+  user?: IUser;
 }
 const defaultState: AuthContextInterface = {
   isLogged: false,
+  isGuess: false
 };
 export interface AuthContextProps {
   children: React.ReactNode;

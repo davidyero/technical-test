@@ -1,7 +1,8 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {ALL_ROUTES} from "./routes/routes.constants.tsx";
+import {BrowserRouter} from "react-router-dom";
 import {AuthContextProvider} from "./context/AuthContext.tsx";
-import {SuperHeader} from "./components/SuperHeader/SuperHeader.tsx";
+import {ContentApp} from "./views/ContentApp/ContentApp.tsx";
+import { ReactNotifications } from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
 import './translation/i18n.tsx';
 
 function App() {
@@ -10,14 +11,8 @@ function App() {
     <AuthContextProvider>
       <BrowserRouter basename="">
         <div className="app">
-          <SuperHeader />
-          <Routes>
-            {
-              ALL_ROUTES.map(route => (
-                <Route key={route.name} path={route.name} Component={route.component} />
-              ))
-            }
-          </Routes>
+          <ReactNotifications />
+          <ContentApp />
         </div>
       </BrowserRouter>
     </AuthContextProvider>

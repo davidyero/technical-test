@@ -10,5 +10,20 @@
     justify-content: space-between;
     padding: 0 30px;
     width: 100%;
+
+    &__logo {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__logo {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
   }
 }

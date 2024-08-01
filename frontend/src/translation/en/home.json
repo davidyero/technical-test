@@ -1,3 +1,9 @@
 {
-  "products": "Products"
+  "closeSession": "Close session",
+  "copyProduct": "Product copied",
+  "copyProductMessage": "The product has been copied to the clipboard",
+  "loading": "Loading...",
+  "noProducts": "No products found",
+  "products": "Products",
+  "welcome": "Hi "
 }

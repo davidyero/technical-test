@@ -1,6 +1,10 @@
-export interface UserOAuthType {
+import {RoleEnum} from "../enums/role.enum.ts";
+
+export interface IUser {
   id: string;
-  name: string;
   email: string;
-  photo: string;
+  name: string;
+  role: RoleEnum;
+  token: string;
 }
+

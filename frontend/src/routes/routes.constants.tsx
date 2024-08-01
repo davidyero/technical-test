@@ -7,18 +7,21 @@ import {HomeView} from "../views/HomeView/HomeView.tsx";
 export const ALL_ROUTES = [
   {
     name: '/',
-    component: LoginView,
-  },
-  {
-    name: '/home',
     component: HomeView,
   },
   {
-    name: '/detail',
+    name: '/detail/:id',
     component: DetailView,
   },
   {
     name: '/edit',
     component: EditView,
+  },
+];
+
+export const PUBLIC_ROUTES = [
+  {
+    name: '/',
+    component: LoginView,
   },
 ];

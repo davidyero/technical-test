@@ -5,18 +5,22 @@ import loginEN from "./en/login.json";
 import loginES from "./es/login.json";
 import homeEN from "./en/home.json";
 import homeES from "./es/home.json";
+import detailEN from "./en/detail.json";
+import detailES from "./es/detail.json";
 
 const resources = {
   en: {
     translation: {
       ...loginEN,
       ...homeEN,
+      ...detailEN
     },
   },
   es: {
     translation: {
       ...loginES,
       ...homeES,
+      ...detailES
     },
   },
 };

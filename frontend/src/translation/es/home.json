@@ -1,3 +1,9 @@
 {
-  "products": "Productos"
+  "closeSession": "Cerrar sesión",
+  "copyProduct": "Producto copiado",
+  "copyProductMessage": "El producto ha sido copiado al portapapeles",
+  "loading": "Carganding...",
+  "noProducts": "No se encontraron productos",
+  "products": "Productos",
+  "welcome": "Hola "
 }

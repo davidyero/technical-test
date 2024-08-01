@@ -1,0 +1,11 @@
+{
+  "back": "Volver",
+  "name": "Nombre",
+  "price": "Precio",
+  "description": "Descripción",
+  "ram": "RAM",
+  "cpu": "CPU",
+  "gpu": "GPU",
+  "display": "Pantalla",
+  "disk": "Disco"
+}
