@@ -1,8 +1,8 @@
-import { ILanguageSupported } from '../../../shared/interfaces/ILanguage.ts'
-import { SuperCardProductProps } from './SuperCardProduct.type.ts'
+import { ILanguageSupported } from '../../../shared/interfaces/ILanguage'
+import { SuperCardProductProps } from './SuperCardProduct.type'
 import { useTranslation } from 'react-i18next'
 import './SuperCardProduct.scss'
-import { SuperActionButtons } from '../SuperActionButtons/SuperActionButtons.tsx'
+import { SuperActionButtons } from '../SuperActionButtons/SuperActionButtons'
 
 export const SuperCardProduct = ({ product }: SuperCardProductProps) => {
   const { i18n } = useTranslation()

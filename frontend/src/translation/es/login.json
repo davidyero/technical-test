@@ -1,4 +1,14 @@
 {
-  "title": "Pronostigol",
-  "subtitle": "Get ready for action! \uD83C\uDF89 Download Pronostigol and enjoy predicting sports results with your friends. Compete, have fun and show who is the best sports strategist! \uD83C\uDFC6⚽"
+  "continueAsGuest": "Continuar como invitado",
+  "email": "Email",
+  "enterYourEmail": "Introduce tu email",
+  "enterYourPassword": "Introduce tu contraseña",
+  "errorLogin": "Error al iniciar sesión",
+  "errorLoginMessage": "Hubo un error al iniciar sesión. Por favor, inténtalo de nuevo.",
+  "forgotPassword": "¿Olvidaste tu contraseña?",
+  "getEverything": "Prepara todo lo que quieras",
+  "login": "Iniciar sesión",
+  "password": "Contraseña",
+  "rememberMe": "Recuérdame",
+  "welcomeBack": "¡Bienvenido de nuevo!"
 }

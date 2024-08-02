@@ -1,4 +1,4 @@
-import { SuperButtonProps } from './SuperButton.type.ts'
+import { SuperButtonProps } from './SuperButton.type'
 import './SuperButton.scss'
 
 export const SuperButton = ({

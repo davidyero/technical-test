@@ -1,4 +1,4 @@
-import { SuperPaginatorProps } from './SuperPaginator.type.ts'
+import { SuperPaginatorProps } from './SuperPaginator.type'
 import LeftIcon from '../../../assets/icons/left.svg'
 import RightIcon from '../../../assets/icons/right.svg'
 import './SuperPaginator.scss'

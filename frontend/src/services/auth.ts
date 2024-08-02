@@ -1,5 +1,5 @@
-import { USER_JULIAN, USER_TATIANA } from '../shared/mocks/users.mock.ts'
-import { IUser } from '../shared/interfaces/IUser.ts'
+import { USER_JULIAN, USER_TATIANA } from '../shared/mocks/users.mock'
+import { IUser } from '../shared/interfaces/IUser'
 
 export const loginService = async (
   email: string,

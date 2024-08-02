@@ -1,4 +1,4 @@
-import { SuperInputProps } from './SuperInput.type.ts'
+import { SuperInputProps } from './SuperInput.type'
 import './SuperInput.scss'
 
 export const SuperInput = (props: SuperInputProps) => {

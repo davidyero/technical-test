@@ -1,4 +1,21 @@
 {
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "types": ["jest", "node", "@testing-library/react"],
+  },
   "files": [],
   "references": [
     {
@@ -7,5 +24,8 @@
     {
       "path": "./tsconfig.node.json"
     }
-  ]
+
+  ],
+  "include": ["src", "**/*.test.ts", "**/*.test.tsx"]
+
 }

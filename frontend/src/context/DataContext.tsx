@@ -1,7 +1,7 @@
 import React, { createContext, useState, Dispatch, SetStateAction } from 'react'
-import { IProducts } from '../shared/interfaces/IProducts.ts'
-import { IModal } from '../shared/interfaces/IModal.ts'
-import { IFeatureFlags } from '../shared/mocks/featureFlags.mocks.ts'
+import { IProducts } from '../shared/interfaces/IProducts'
+import { IModal } from '../shared/interfaces/IModal'
+import { IFeatureFlags } from '../shared/mocks/featureFlags.mocks'
 
 export interface DataContextInterface {
   products: IProducts[]

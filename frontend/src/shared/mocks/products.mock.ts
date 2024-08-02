@@ -1,4 +1,4 @@
-import { IProducts } from '../interfaces/IProducts.ts'
+import { IProducts } from '../interfaces/IProducts'
 
 export const PRODUCT_LIST: IProducts[] = [
   {

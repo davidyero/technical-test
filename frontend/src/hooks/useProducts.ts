@@ -5,11 +5,11 @@ import {
   getProductDetailService,
   removeProductService,
   searchProductsService,
-} from '../services/products.ts'
+} from '../services/products'
 import { useContext, useState } from 'react'
-import { IListResponse, IProducts } from '../shared/interfaces/IProducts.ts'
-import { ILanguageSupported } from '../shared/interfaces/ILanguage.ts'
-import { DataContext } from '../context/DataContext.tsx'
+import { IListResponse, IProducts } from '../shared/interfaces/IProducts'
+import { ILanguageSupported } from '../shared/interfaces/ILanguage'
+import { DataContext } from '../context/DataContext'
 
 export const useProducts = () => {
   const { data, setData } = useContext(DataContext)

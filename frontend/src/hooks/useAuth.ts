@@ -12,7 +12,7 @@ export const useAuth = () => {
 
   const logout = () => {
     setAuth({
-      isGuess: false,
+      isGuest: false,
       isLogged: false,
     })
     clear()

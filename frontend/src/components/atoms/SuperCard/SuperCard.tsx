@@ -1,4 +1,4 @@
-import { SuperCardProps } from './SuperCard.type.ts'
+import { SuperCardProps } from './SuperCard.type'
 import './SuperCard.scss'
 
 export const SuperCard = ({ children, className, onClick }: SuperCardProps) => {

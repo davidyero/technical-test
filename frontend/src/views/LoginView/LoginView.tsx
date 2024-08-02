@@ -6,74 +6,90 @@ import { useAuth } from '../../hooks/useAuth.ts'
 import { useContext, useState } from 'react'
 import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
 import {
-  IS_GUESS,
+  IS_GUEST,
   USER_STORAGE,
 } from '../../shared/constants/LocalStorages.constants.ts'
 import { AuthContext } from '../../context/AuthContext.tsx'
+import { useTranslation } from 'react-i18next'
+import { RoleEnum } from '../../shared/enums/role.enum.ts'
+import {useNotifications} from "../../hooks/useNotifications.ts";
 
 export const LoginView = () => {
+  const { t } = useTranslation()
   const { setAuth } = useContext(AuthContext)
   const { setItem } = useLocalStorage()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const { showNotification } = useNotifications()
   const { login } = useAuth()
 
   const handleLogin = async () => {
     try {
-      const user = await login(email, password)
+      const user = await login(email.toLowerCase(), password)
       setItem(USER_STORAGE, JSON.stringify(user))
-      setItem(IS_GUESS, 'false')
-      setAuth({ isLogged: true, isGuess: false, user })
+      setItem(IS_GUEST, 'false')
+      setAuth({ isLogged: true, isGuest: false, user })
     } catch (error) {
+      showNotification(t('errorLogin'), t('errorLoginMessage'), 'danger')
       console.error(error)
     }
   }
 
   const continueAsGuest = () => {
-    setAuth({ isLogged: true, isGuess: true })
-    setItem(IS_GUESS, 'true')
+    setAuth({
+      user: {
+        role: RoleEnum.GUEST,
+        id: '',
+        email: '',
+        name: '',
+        token: '',
+      },
+      isLogged: true,
+      isGuest: true,
+    })
+    setItem(IS_GUEST, 'true')
   }
 
   return (
     <div className='login__container'>
       <SuperCard className={'login__card'} onClick={() => {}}>
         <div className='login__container--left'>
-          <label className='login__label'>Get Everything you want</label>
+          <label className='login__label'>{t('getEverything')}</label>
         </div>
         <div className='login__container--right'>
           <div className='login__form'>
             <div className='login__container-text'>
               <label className='login__container-text--title'>
-                Welcome back
+                {t('welcomeBack')}
               </label>
             </div>
             <div className='login__container-text'>
               <label className='login__container-text--description'>
-                Enter your email
+                {t('enterYourEmail')}
               </label>
             </div>
             <SuperInput
-              label={'Email'}
+              label={t('email')}
               className={'login__input'}
               type={'email'}
-              placeholder={'Enter your email'}
+              placeholder={t('enterYourEmail')}
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
             <SuperInput
-              label={'Password'}
+              label={t('password')}
               className={'login__input'}
               type={'password'}
-              placeholder={'Enter your password'}
+              placeholder={t('enterYourPassword')}
               value={password}
               onChange={e => setPassword(e.target.value)}
             />
             <div className='login__container--actions'>
               <label className='login__container-text--forgot'>
-                Remember me?
+                {t('rememberMe')}
               </label>
               <label className='login__container-text--forgot'>
-                Forgot your password?
+                {t('forgotPassword')}
               </label>
             </div>
             <SuperButton
@@ -84,9 +100,9 @@ export const LoginView = () => {
             <div className='login__container-text'>
               <label
                 onClick={continueAsGuest}
-                className='login__container-text--guess'
+                className='login__container-text--guest'
               >
-                Ingresar como invitado
+                {t('continueAsGuest')}
               </label>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { SuperEmptyStateProps } from './SuperEmptyState.type.ts'
+import { SuperEmptyStateProps } from './SuperEmptyState.type'
 import './SuperEmptyState.scss'
 
 export const SuperEmptyState = ({ text }: SuperEmptyStateProps) => {

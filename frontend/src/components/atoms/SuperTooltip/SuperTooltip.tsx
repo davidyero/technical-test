@@ -3,10 +3,10 @@ import spanishFlag from '../../../assets/flags/spanish-flag.svg'
 import userIcon from '../../../assets/icons/user.svg'
 import { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ILanguageSupported } from '../../../shared/interfaces/ILanguage.ts'
+import { ILanguageSupported } from '../../../shared/interfaces/ILanguage'
 import './SuperTooltip.scss'
-import { useAuth } from '../../../hooks/useAuth.ts'
-import { DataContext } from '../../../context/DataContext.tsx'
+import { useAuth } from '../../../hooks/useAuth'
+import { DataContext } from '../../../context/DataContext'
 
 export const SuperTooltip = () => {
   const { logout } = useAuth()

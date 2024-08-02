@@ -1,6 +1,6 @@
-import { IProducts } from '../shared/interfaces/IProducts.ts'
-import { ILanguageSupported } from '../shared/interfaces/ILanguage.ts'
-import { PRODUCT_LIST } from '../shared/mocks/products.mock.ts'
+import { IProducts } from '../shared/interfaces/IProducts'
+import { ILanguageSupported } from '../shared/interfaces/ILanguage'
+import { PRODUCT_LIST } from '../shared/mocks/products.mock'
 
 export const editProduct = async (
   product: IProducts,

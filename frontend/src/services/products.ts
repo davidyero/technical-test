@@ -1,8 +1,8 @@
-import { PRODUCT_LIST } from '../shared/mocks/products.mock.ts'
-import { IListResponse, IProducts } from '../shared/interfaces/IProducts.ts'
-import { ILanguageSupported } from '../shared/interfaces/ILanguage.ts'
+import { PRODUCT_LIST } from '../shared/mocks/products.mock'
+import { IListResponse, IProducts } from '../shared/interfaces/IProducts'
+import { ILanguageSupported } from '../shared/interfaces/ILanguage'
 import { SetStateAction } from 'react'
-import { DataContextInterface } from '../context/DataContext.tsx'
+import { DataContextInterface } from '../context/DataContext'
 import {
   addProduct,
   editProduct,
@@ -11,7 +11,7 @@ import {
   getProductsByPage,
   removeProduct,
   searchProduct,
-} from './products.helper.ts'
+} from './products.helper'
 
 export const getAllProductsService = async (
   page: number,

@@ -13,7 +13,7 @@ export const ALL_ROUTES = [
   {
     name: '/detail/:id',
     component: DetailView,
-    validateRole: [RoleEnum.ADMIN],
+    validateRole: [RoleEnum.ADMIN, RoleEnum.USER, RoleEnum.GUEST],
   },
   {
     name: '/edit/:id',
