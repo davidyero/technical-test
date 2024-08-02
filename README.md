@@ -33,6 +33,8 @@ Se realiza un proyecto con código reutilizable, escalable y mantenible. Se util
 - Se implementa el principio de segregación de interfaces.
 - Se implementa el patrón 7-1 de Sass.
 - Se centralizan colores y fuentes en variables de Sass.
+- Todo componente, objeto o vista tiene su interface
+- Se implementa metodología BEM
 
 ## Linter
 - Se implementa un sistema de linter con ESLint y Prettier para mantener un código limpio y ordenado.
@@ -58,6 +60,10 @@ al backend, dando más eficiencia a la aplicación
 ## Estilos
 - Se implementa un sistema de estilos con Sass y CSS Modules para evitar la duplicidad de código y mantener la experiencia
   del usuario.
+
+## Dependencias
+- Se usaron librerías de componentes como el Modal o Notificaciones, pero fueron encapsuladas con el fin de cambiarlas
+en cualquier momento sin necesidad de afectar todas las implementaciones
 
 # FUNCIONALIDADES
 
