@@ -76,6 +76,9 @@ una consulta al backend por estos flags.
   sea consulta, creación, edición y eliminación de productos.
 - Se implementa un sistema de paginación con el fin de mostrar los productos de 10 en 10.
 
+## Mocks
+- Se crearon mocks de Feature Flags, Usuarios y Productos simulando una base de datos.
+
 ## Busqueda de productos
 - Se implementa un sistema de busqueda de productos con el fin de encontrar productos de forma rápida y eficiente.
 
