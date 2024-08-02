@@ -5,5 +5,10 @@
   "loading": "Carganding...",
   "noProducts": "No se encontraron productos",
   "products": "Productos",
+  "removeProduct": "Eliminar producto",
+  "removeProductCancel": "Cancelar",
+  "removeProductConfirm": "Eliminar",
+  "removeProductMessage": "¿Estás seguro de que deseas eliminar este producto ",
+  "removeProductSuccess": "Producto eliminado correctamente",
   "welcome": "Hola "
 }

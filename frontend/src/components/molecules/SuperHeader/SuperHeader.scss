@@ -13,6 +13,7 @@
 
     &__logo {
       align-items: center;
+      cursor: pointer;
       display: flex;
       flex-direction: row;
     }
@@ -25,5 +26,8 @@
     justify-content: center;
     height: 40px;
     width: 40px;
+  }
+  &__text {
+    cursor: pointer;
   }
 }

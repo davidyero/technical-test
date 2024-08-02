@@ -16,4 +16,10 @@
     color: $white;
     cursor: not-allowed;
   }
+
+  &__danger {
+    background-color: $red;
+    border: 1px solid $red;
+    color: $white;
+  }
 }

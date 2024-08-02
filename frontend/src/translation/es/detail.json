@@ -1,11 +1,21 @@
 {
   "back": "Volver",
-  "name": "Nombre",
-  "price": "Precio",
-  "description": "Descripción",
-  "ram": "RAM",
   "cpu": "CPU",
-  "gpu": "GPU",
+  "createProduct": "Crear producto",
+  "createdProduct": "Producto creado",
+  "createdProductSuccess": "El producto ha sido creado con éxito",
+  "description": "Descripción",
+  "descriptionEn": "Descripción en inglés",
+  "descriptionEs": "Descripción en español",
+  "disk": "Disco",
   "display": "Pantalla",
-  "disk": "Disco"
+  "gpu": "GPU",
+  "name": "Nombre",
+  "nameEn": "Nombre en inglés",
+  "nameEs": "Nombre en español",
+  "price": "Precio",
+  "ram": "RAM",
+  "updateProduct" : "Actualizar producto",
+  "updatedProduct": "Producto actualizado",
+  "updatedProductSuccess": "El producto ha sido actualizado con éxito"
 }

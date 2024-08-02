@@ -1,0 +1,36 @@
+@import "../../styles/utils/breakpoints";
+
+.create {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-height: 700px;
+    width: 50%;
+
+    &--title {}
+    &--content {
+      overflow-y: auto;
+    }
+  }
+  &__content-buttons {
+    padding-top: 20px;
+  }
+
+  .super-input--container {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .create {
+    &__container {
+      box-sizing: border-box;
+      padding: 20px;
+      width: 100%;
+    }
+  }
+}

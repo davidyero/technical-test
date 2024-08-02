@@ -14,16 +14,22 @@ import { SuperCardProduct } from '../../components/atoms/SuperCardProduct/SuperC
 import { ILanguageSupported } from '../../shared/interfaces/ILanguage.ts'
 import { SuperEmptyState } from '../../components/atoms/SuperEmptyState/SuperEmptyState.tsx'
 import { DataContext } from '../../context/DataContext.tsx'
+import { SuperButton } from '../../components/atoms/SuperButton/SuperButton.tsx'
+import { RoleEnum } from '../../shared/enums/role.enum.ts'
+import { AuthContext } from '../../context/AuthContext.tsx'
 
 export const HomeView = () => {
   const navigate = useNavigate()
   const { t, i18n } = useTranslation()
   const { searchProducts, getAllProducts, isLoading } = useProducts()
-  const { data, setData } = useContext(DataContext)
+  const { data } = useContext(DataContext)
   const [allProducts, setAllProducts] = useState<IProducts[]>([])
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(0)
   const [textFilter, setTextFilter] = useState('')
+  const { auth } = useContext(AuthContext)
+  const isAdmin = auth?.user?.role === RoleEnum.ADMIN
+  const canCreate = data.featureFlags.CREATE_PRODUCT
 
   const handleSearch = async (page: number) => {
     setCurrentPage(page)
@@ -52,13 +58,23 @@ export const HomeView = () => {
       const listResponse = await getAllProducts(currentPage)
       setAllProducts(listResponse.results)
       setTotalPages(listResponse.totalPages)
-      setData({
-        ...data,
-        products: listResponse.results,
-      })
     } catch (error) {
       console.error('initialValues ::: ', error)
     }
+  }
+
+  const updateValues = async () => {
+    try {
+      const listResponse = await getAllProducts(currentPage)
+      setAllProducts(listResponse.results)
+      setTotalPages(listResponse.totalPages)
+    } catch (error) {
+      console.error('updateValues ::: ', error)
+    }
+  }
+
+  const handleCreateProduct = () => {
+    navigate('/create')
   }
 
   useEffect(() => {
@@ -69,6 +85,11 @@ export const HomeView = () => {
     }
     // eslint-disable-next-line
   }, [currentPage])
+
+  useEffect(() => {
+    updateValues()
+    // eslint-disable-next-line
+  }, [data.products]);
 
   return (
     <div className='home'>
@@ -101,6 +122,14 @@ export const HomeView = () => {
               />
             </div>
           </div>
+          {canCreate && isAdmin && (
+            <div>
+              <SuperButton
+                text={t('createProduct')}
+                onClick={handleCreateProduct}
+              />
+            </div>
+          )}
           <div className='home--list'>
             {isLoading && <SuperLoader />}
             {!isLoading && allProducts.length === 0 && (

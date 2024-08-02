@@ -5,5 +5,10 @@
   "loading": "Loading...",
   "noProducts": "No products found",
   "products": "Products",
+  "removeProduct": "Remove product",
+  "removeProductCancel": "Cancel",
+  "removeProductConfirm": "Delete",
+  "removeProductMessage": "Are you sure you want to delete this product ",
+  "removeProductSuccess": "Product deleted successfully",
   "welcome": "Hi "
 }

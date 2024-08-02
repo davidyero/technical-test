@@ -1,3 +1,5 @@
+@import "../../styles/utils/breakpoints";
+
 .detail {
   display: flex;
   flex-direction: column;
@@ -56,6 +58,19 @@
     }
     &--actions {
       margin-top: 20px;
+    }
+  }
+}
+@media (max-width: $tablet) {
+  .detail {
+    box-sizing: border-box;
+    justify-content: start;
+    padding: 20px;
+    width: 100%;
+
+    &__container {
+      box-sizing: border-box;
+      width: 100%;
     }
   }
 }

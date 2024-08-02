@@ -1,12 +1,33 @@
 import { PRODUCT_LIST } from '../shared/mocks/products.mock.ts'
 import { IListResponse, IProducts } from '../shared/interfaces/IProducts.ts'
 import { ILanguageSupported } from '../shared/interfaces/ILanguage.ts'
+import { SetStateAction } from 'react'
+import { DataContextInterface } from '../context/DataContext.tsx'
+import {
+  addProduct,
+  editProduct,
+  getBeforePage,
+  getNextPage,
+  getProductsByPage,
+  removeProduct,
+  searchProduct,
+} from './products.helper.ts'
 
 export const getAllProductsService = async (
   page: number,
-  products: IProducts[]
+  data: DataContextInterface,
+  setData: {
+    (value: SetStateAction<DataContextInterface>): void
+    (arg0: never): void
+  }
 ): Promise<IListResponse> => {
-  const allProducts = products.length > 0 ? products : PRODUCT_LIST
+  const allProducts = data.products.length > 0 ? data.products : PRODUCT_LIST
+  if (data.products.length === 0) {
+    setData({
+      ...data,
+      products: allProducts,
+    })
+  }
   const totalPages = Math.ceil(allProducts.length / 10)
   const response = {
     count: allProducts.length,
@@ -23,9 +44,11 @@ export const getAllProductsService = async (
 }
 
 export const getProductDetailService = async (
-  id: string
+  id: string,
+  products: IProducts[]
 ): Promise<IProducts> => {
-  const product = PRODUCT_LIST.find(product => product.id === id)
+  const allProducts = products.length > 0 ? products : PRODUCT_LIST
+  const product = allProducts.find(product => product.id === id)
   if (!product) {
     throw new Error('Product not found')
   }
@@ -58,53 +81,38 @@ export const searchProductsService = async (
   })
 }
 
-const searchProduct = async (
-  text: string,
-  currentLanguage: ILanguageSupported,
+export const removeProductService = async (
+  productId: string,
   products: IProducts[]
-) => {
+): Promise<IProducts[]> => {
   const allProducts = products.length > 0 ? products : PRODUCT_LIST
-  if (text === '') {
-    return allProducts
-  }
-  return allProducts.filter(product => {
-    if (
-      product.name[currentLanguage].includes(text) ||
-      product.description[currentLanguage].includes(text)
-    ) {
-      return product
-    }
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(removeProduct(productId, allProducts))
+    }, 500)
   })
 }
 
-const getProductsByPage = (
-  page: number,
-  allProducts: IProducts[],
-  totalPages: number
-) => {
-  if (page > totalPages) {
-    return []
-  }
-  return allProducts.filter(
-    (_, index) => index >= (page - 1) * 10 && index < page * 10
-  )
+export const createProductService = async (
+  product: IProducts,
+  products: IProducts[]
+): Promise<IProducts[]> => {
+  const allProducts = products.length > 0 ? products : PRODUCT_LIST
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(addProduct(product, allProducts))
+    }, 500)
+  })
 }
 
-const getNextPage = (page: number, totalPages: number) => {
-  if (page === totalPages) {
-    return totalPages
-  }
-  if (page < totalPages) {
-    return page + 1
-  }
-  return page
-}
-const getBeforePage = (page: number, totalPages: number) => {
-  if (page < totalPages && page > 1) {
-    return page - 1
-  }
-  if (page > totalPages || page === totalPages) {
-    return totalPages - 1
-  }
-  return 0
+export const editProductService = async (
+  product: IProducts,
+  products: IProducts[]
+): Promise<IProducts[]> => {
+  const allProducts = products.length > 0 ? products : PRODUCT_LIST
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(editProduct(product, allProducts))
+    }, 500)
+  })
 }

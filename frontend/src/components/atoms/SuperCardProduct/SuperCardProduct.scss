@@ -1,4 +1,5 @@
 @import "../../../styles/utils/colors";
+@import "../../../styles/utils/breakpoints";
 
 .card-product {
   align-items: center;
@@ -57,5 +58,14 @@
   &--image {
     height: 60px;
     width: 60px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .card-product {
+    height: auto;
+    &--container {
+      align-items: center;
+    }
   }
 }

@@ -1,11 +1,31 @@
 import React, { createContext, useState, Dispatch, SetStateAction } from 'react'
 import { IProducts } from '../shared/interfaces/IProducts.ts'
+import { IModal } from '../shared/interfaces/IModal.ts'
+import { IFeatureFlags } from '../shared/mocks/featureFlags.mocks.ts'
 
 export interface DataContextInterface {
   products: IProducts[]
+  modal: IModal
+  featureFlags: IFeatureFlags
 }
 const defaultState: DataContextInterface = {
   products: [],
+  modal: {
+    isOpen: false,
+    title: '',
+    message: '',
+    textCancel: '',
+    textConfirm: '',
+    onConfirm: () => {},
+    onCancel: () => {},
+    children: null,
+  },
+  featureFlags: {
+    INTERNATIONALIZATION: false,
+    EDIT_PRODUCT: false,
+    REMOVE_PRODUCT: false,
+    CREATE_PRODUCT: false,
+  },
 }
 export interface DataContextProps {
   children: React.ReactNode

@@ -1,11 +1,21 @@
 {
   "back": "Back",
-  "name": "Name",
-  "price": "Price",
-  "description": "Description",
-  "ram": "RAM",
   "cpu": "CPU",
-  "gpu": "GPU",
+  "createProduct": "Create product",
+  "createdProduct": "Product created",
+  "createdProductSuccess": "The product has been created successfully",
+  "description": "Description",
+  "descriptionEn": "Description in English",
+  "descriptionEs": "Description in Spanish",
+  "disk": "Disk",
   "display": "Display",
-  "disk": "Disk"
+  "gpu": "GPU",
+  "name": "Name",
+  "nameEn": "Name in English",
+  "nameEs": "Name in Spanish",
+  "price": "Price",
+  "ram": "RAM",
+  "updateProduct" : "Update product",
+  "updatedProduct": "Product updated",
+  "updatedProductSuccess": "The product has been updated successfully"
 }

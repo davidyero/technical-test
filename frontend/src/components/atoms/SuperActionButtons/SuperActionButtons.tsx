@@ -8,15 +8,61 @@ import { useNotifications } from '../../../hooks/useNotifications.ts'
 import { RoleEnum } from '../../../shared/enums/role.enum.ts'
 import { SuperActionButtonsProps } from './SuperActionButtons.type.ts'
 import './SuperActionButtons.scss'
+import { DataContext } from '../../../context/DataContext.tsx'
+import { useProducts } from '../../../hooks/useProducts.ts'
+import { useNavigate } from 'react-router-dom'
 
 export const SuperActionButtons = ({ productId }: SuperActionButtonsProps) => {
+  const navigate = useNavigate()
   const { t } = useTranslation()
   const { auth } = useContext(AuthContext)
+  const { data, setData } = useContext(DataContext)
   const { showNotification } = useNotifications()
+  const { removeProductById } = useProducts()
   const isAdmin = auth?.user?.role === RoleEnum.ADMIN
+  const canEdit = data.featureFlags.EDIT_PRODUCT
+  const canRemove = data.featureFlags.REMOVE_PRODUCT
 
-  const removeProduct = (event: React.MouseEvent<HTMLImageElement>) => {
-    console.log('Remove product')
+  const removeProduct = async () => {
+    try {
+      await removeProductById(productId)
+      showNotification(t('removeProduct'), t('removeProductSuccess'), 'success')
+      setData({
+        ...data,
+        products: data.products.filter(product => product.id !== productId),
+        modal: {
+          ...data.modal,
+          isOpen: false,
+        },
+      })
+    } catch (error) {
+      showNotification(t('removeProduct'), t('removeProductError'), 'danger')
+    }
+  }
+
+  const handleRemoveProduct = (event: React.MouseEvent<HTMLImageElement>) => {
+    setData({
+      ...data,
+      modal: {
+        isOpen: true,
+        title: t('removeProduct'),
+        message: t('removeProductMessage') + ' ' + productId + '?',
+        textConfirm: t('removeProductConfirm'),
+        textCancel: t('removeProductCancel'),
+        classNameButtonConfirm: 'super-button__danger',
+        onConfirm: () => removeProduct(),
+        onCancel: () => {
+          setData({
+            ...data,
+            modal: {
+              ...data.modal,
+              isOpen: false,
+            },
+          })
+        },
+        children: null,
+      },
+    })
     event.stopPropagation()
   }
 
@@ -30,7 +76,7 @@ export const SuperActionButtons = ({ productId }: SuperActionButtonsProps) => {
   }
 
   const editProduct = (event: React.MouseEvent<HTMLImageElement>) => {
-    console.log('Edit product')
+    navigate(`/edit/${productId}`)
     event.stopPropagation()
   }
   return (
@@ -40,16 +86,16 @@ export const SuperActionButtons = ({ productId }: SuperActionButtonsProps) => {
         className='card-product--icon'
         src={CopyIcon}
       />
-      {isAdmin && (
+      {isAdmin && canEdit && (
         <img
           onClick={editProduct}
           className='card-product--icon'
           src={EditIcon}
         />
       )}
-      {isAdmin && (
+      {isAdmin && canRemove && (
         <img
-          onClick={removeProduct}
+          onClick={handleRemoveProduct}
           className='card-product--icon'
           src={TrashIcon}
         />

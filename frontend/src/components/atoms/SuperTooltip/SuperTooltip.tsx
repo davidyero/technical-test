@@ -1,16 +1,19 @@
 import englishFlag from '../../../assets/flags/english-flag.svg'
 import spanishFlag from '../../../assets/flags/spanish-flag.svg'
 import userIcon from '../../../assets/icons/user.svg'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ILanguageSupported } from '../../../shared/interfaces/ILanguage.ts'
 import './SuperTooltip.scss'
 import { useAuth } from '../../../hooks/useAuth.ts'
+import { DataContext } from '../../../context/DataContext.tsx'
 
 export const SuperTooltip = () => {
   const { logout } = useAuth()
+  const { data } = useContext(DataContext)
   const { i18n, t } = useTranslation()
   const [showTooltip, setShowTooltip] = useState(false)
+  const canChangeLanguage = data?.featureFlags.INTERNATIONALIZATION
   const languages = [
     {
       name: 'en',
@@ -42,21 +45,23 @@ export const SuperTooltip = () => {
       {showTooltip && (
         <div className={'tooltip-container__select'}>
           <div className={'tooltip-container__triangle'}></div>
-          <div className={'tooltip-container__row'}>
-            {languages.map((language, index) => (
-              <div
-                key={index}
-                className={`tooltip-container__option ${i18n.language === language.name ? 'tooltip-container__selected' : ''}`}
-                onClick={() => handleLanguageChange(language.name)}
-              >
-                <img
-                  className={'tooltip-container__flag'}
-                  src={language.flag}
-                  alt={language.name}
-                />
-              </div>
-            ))}
-          </div>
+          {canChangeLanguage && (
+            <div className={'tooltip-container__row'}>
+              {languages.map((language, index) => (
+                <div
+                  key={index}
+                  className={`tooltip-container__option ${i18n.language === language.name ? 'tooltip-container__selected' : ''}`}
+                  onClick={() => handleLanguageChange(language.name)}
+                >
+                  <img
+                    className={'tooltip-container__flag'}
+                    src={language.flag}
+                    alt={language.name}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
           <div className={'tooltip-container__row'}>
             <label
               onClick={handleLogout}
