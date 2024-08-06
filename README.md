@@ -1,4 +1,8 @@
 # Super Store
+
+##URL
+https://davidyero.github.io/technical-test/
+
 ## Funcionamiento
 Se realizó una distribución de carpetas de la forma presentada al ser un proyecto pequeño. 
 En caso de crecer se recomienda refactorizar esta distribución y orientarla a features, con esto
