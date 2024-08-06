@@ -35,6 +35,7 @@ export const DetailView = () => {
 
   useEffect(() => {
     getProductDetailById()
+    // eslint-disable-next-line
   }, [])
 
   return (

@@ -7,6 +7,6 @@ import 'react-notifications-component/dist/theme.css';
 import './translation/i18n';
 import { DataContextProvider } from './context/DataContext';
 function App() {
-    return (_jsx(AuthContextProvider, { children: _jsx(DataContextProvider, { children: _jsx(BrowserRouter, { basename: '', children: _jsxs("div", { className: 'app', children: [_jsx(ReactNotifications, {}), _jsx(ContentApp, {})] }) }) }) }));
+    return (_jsx(AuthContextProvider, { children: _jsx(DataContextProvider, { children: _jsx(BrowserRouter, { basename: '/technical-test/', children: _jsxs("div", { className: 'app', children: [_jsx(ReactNotifications, {}), _jsx(ContentApp, {})] }) }) }) }));
 }
 export default App;
