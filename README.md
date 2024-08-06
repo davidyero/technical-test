@@ -1,4 +1,14 @@
 # Super Store
+## Funcionamiento
+Se realizó una distribución de carpetas de la forma presentada al ser un proyecto pequeño. 
+En caso de crecer se recomienda refactorizar esta distribución y orientarla a features, con esto
+el desarrollador identificará funcionalidades más fácil y es más sencillo identificar bugs.
+
+Se trabajará con vite y su configuración básica, se configura babel para las pruebas unitarias, eslint y prettier
+para el analisis de código estático, mejor legibilidad y intellisense del IDE/Editor de código.
+
+Se implementan dependendencias con mayor cantidad de descargas, soporte y recomendaciones con el fin de inyectar
+la menor cantidad de vulnerabilidades con dependencias sin actualizar o sin soporte.
 
 ## Funcionamiento
 Con los siguientes comandos desde este punto puedes iniciar el proyecto
@@ -62,7 +72,7 @@ al backend, dando más eficiencia a la aplicación
   del usuario.
 
 ## Dependencias
-- Se usaron librerías de componentes como el Modal o Notificaciones, pero fueron encapsuladas con el fin de cambiarlas
+- Se usaron librerías de componentes como el Modal o Notificaciones, pero fueron encapsuladas con el fin de poder cambiarlas
 en cualquier momento sin necesidad de afectar todas las implementaciones
 
 # FUNCIONALIDADES
@@ -105,8 +115,17 @@ tatiana@gmail.com - 123456 => ADMIN
 julian@gmail.com - 123456 => USER
 ```
 
-## Mejoras
-- Por el tiempo y la complejidad del proyecto, se deja pendiente la implementación de pruebas de integración,
+## Pendientes
+- Por el tiempo y la complejidad del proyecto, se deja pendiente la implementación de pruebas de integración, principlmente
+se deberían implementar en las funciones vitales del proyecto como es:
+  - Login
+  - Logout
+  - Obtener productos
+  - Crear producto
+  - Eliminar producto
+  - Filtrar productos
+  - Validación de feature flags
+  - Validación de roles
 - Por el tiempo no se alcanza a agregar un filtro robusto o un ordenamiento de productos, realmente no es algo complejo
 puesto que se tiene la base para hacerlo, lo tenia pensando en hacerlo similar a la busqueda de productos solo que 
 teniendo en cuenta más campos y que fueran los seleccionados en el filtro pero no alcance a desarrollarlo
