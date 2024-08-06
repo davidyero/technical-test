@@ -10,7 +10,7 @@ function App() {
   return (
     <AuthContextProvider>
       <DataContextProvider>
-        <BrowserRouter basename='/technical-test'>
+        <BrowserRouter basename='/technical-test/'>
           <div className='app'>
             <ReactNotifications />
             <ContentApp />
