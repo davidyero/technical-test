@@ -129,5 +129,6 @@ se deberían implementar en las funciones vitales del proyecto como es:
 - Por el tiempo no se alcanza a agregar un filtro robusto o un ordenamiento de productos, realmente no es algo complejo
 puesto que se tiene la base para hacerlo, lo tenia pensando en hacerlo similar a la busqueda de productos solo que 
 teniendo en cuenta más campos y que fueran los seleccionados en el filtro pero no alcance a desarrollarlo
-
+- Creación del backend con base de datos sin quemar los productos, sino cargarlos por medio de una rutina y luego poder gestionar
+estos datos con la aplicación frontend
 
