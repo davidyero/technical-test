@@ -1,8 +1,8 @@
-import { LoginView } from '../views/LoginView/LoginView.tsx'
-import { DetailView } from '../views/DetailView/DetailView.tsx'
-import { HomeView } from '../views/HomeView/HomeView.tsx'
-import { CreateEditView } from '../views/CreateEditView/CreateEditView.tsx'
-import { RoleEnum } from '../shared/enums/role.enum.ts'
+import { LoginView } from '../views/LoginView/LoginView'
+import { DetailView } from '../views/DetailView/DetailView'
+import { HomeView } from '../views/HomeView/HomeView'
+import { CreateEditView } from '../views/CreateEditView/CreateEditView'
+import { RoleEnum } from '../shared/enums/role.enum'
 
 export const ALL_ROUTES = [
   {

@@ -1,5 +1,5 @@
 import './SuperHeader.scss'
-import { SuperTooltip } from '../../atoms/SuperTooltip/SuperTooltip.tsx'
+import { SuperTooltip } from '../../atoms/SuperTooltip/SuperTooltip'
 import MouseIcon from '../../../assets/icons/mouse.svg'
 import { useNavigate } from 'react-router-dom'
 

@@ -1,20 +1,20 @@
-import { SuperHeader } from '../../components/molecules/SuperHeader/SuperHeader.tsx'
+import { SuperHeader } from '../../components/molecules/SuperHeader/SuperHeader'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { ALL_ROUTES, PUBLIC_ROUTES } from '../../routes/routes.constants.tsx'
+import { ALL_ROUTES, PUBLIC_ROUTES } from '../../routes/routes.constants'
 import { useContext, useEffect } from 'react'
-import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
 import {
   IS_GUEST,
   USER_STORAGE,
-} from '../../shared/constants/LocalStorages.constants.ts'
-import { AuthContext } from '../../context/AuthContext.tsx'
-import { IUser } from '../../shared/interfaces/IUser.ts'
+} from '../../shared/constants/LocalStorages.constants'
+import { AuthContext } from '../../context/AuthContext'
+import { IUser } from '../../shared/interfaces/IUser'
 import { useTranslation } from 'react-i18next'
 import './Content.scss'
-import { SuperModal } from '../../components/molecules/SuperModal/SuperModal.tsx'
-import { DataContext } from '../../context/DataContext.tsx'
-import { useFeatureFlags } from '../../hooks/useFeatureFlags.ts'
-import { RoleEnum } from '../../shared/enums/role.enum.ts'
+import { SuperModal } from '../../components/molecules/SuperModal/SuperModal'
+import { DataContext } from '../../context/DataContext'
+import { useFeatureFlags } from '../../hooks/useFeatureFlags'
+import { RoleEnum } from '../../shared/enums/role.enum'
 
 export const ContentApp = () => {
   const { t } = useTranslation()

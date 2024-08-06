@@ -1,4 +1,14 @@
 # Super Store
+## Funcionamiento
+Se realizó una distribución de carpetas de la forma presentada al ser un proyecto pequeño. 
+En caso de crecer se recomienda refactorizar esta distribución y orientarla a features, con esto
+el desarrollador identificará funcionalidades más fácil y es más sencillo identificar bugs.
+
+Se trabajará con vite y su configuración básica, se configura babel para las pruebas unitarias, eslint y prettier
+para el analisis de código estático, mejor legibilidad y intellisense del IDE/Editor de código.
+
+Se implementan dependendencias con mayor cantidad de descargas, soporte y recomendaciones con el fin de inyectar
+la menor cantidad de vulnerabilidades con dependencias sin actualizar o sin soporte.
 
 ## Funcionamiento
 Con los siguientes comandos desde este punto puedes iniciar el proyecto
@@ -33,6 +43,8 @@ Se realiza un proyecto con código reutilizable, escalable y mantenible. Se util
 - Se implementa el principio de segregación de interfaces.
 - Se implementa el patrón 7-1 de Sass.
 - Se centralizan colores y fuentes en variables de Sass.
+- Todo componente, objeto o vista tiene su interface
+- Se implementa metodología BEM
 
 ## Linter
 - Se implementa un sistema de linter con ESLint y Prettier para mantener un código limpio y ordenado.
@@ -59,6 +71,10 @@ al backend, dando más eficiencia a la aplicación
 - Se implementa un sistema de estilos con Sass y CSS Modules para evitar la duplicidad de código y mantener la experiencia
   del usuario.
 
+## Dependencias
+- Se usaron librerías de componentes como el Modal o Notificaciones, pero fueron encapsuladas con el fin de poder cambiarlas
+en cualquier momento sin necesidad de afectar todas las implementaciones
+
 # FUNCIONALIDADES
 
 ## Creación, edición y eliminación de productos
@@ -75,6 +91,9 @@ una consulta al backend por estos flags.
 - Se implementa un sistema de consultas al backend simulando peticiones con tiempos de 5 segundos de espera en cada petición,
   sea consulta, creación, edición y eliminación de productos.
 - Se implementa un sistema de paginación con el fin de mostrar los productos de 10 en 10.
+
+## Mocks
+- Se crearon mocks de Feature Flags, Usuarios y Productos simulando una base de datos.
 
 ## Busqueda de productos
 - Se implementa un sistema de busqueda de productos con el fin de encontrar productos de forma rápida y eficiente.
@@ -96,10 +115,20 @@ tatiana@gmail.com - 123456 => ADMIN
 julian@gmail.com - 123456 => USER
 ```
 
-## Mejoras
-- Por el tiempo y la complejidad del proyecto, se deja pendiente la implementación de pruebas de integración,
+## Pendientes
+- Por el tiempo y la complejidad del proyecto, se deja pendiente la implementación de pruebas de integración, principlmente
+se deberían implementar en las funciones vitales del proyecto como es:
+  - Login
+  - Logout
+  - Obtener productos
+  - Crear producto
+  - Eliminar producto
+  - Filtrar productos
+  - Validación de feature flags
+  - Validación de roles
 - Por el tiempo no se alcanza a agregar un filtro robusto o un ordenamiento de productos, realmente no es algo complejo
 puesto que se tiene la base para hacerlo, lo tenia pensando en hacerlo similar a la busqueda de productos solo que 
 teniendo en cuenta más campos y que fueran los seleccionados en el filtro pero no alcance a desarrollarlo
-
+- Creación del backend con base de datos sin quemar los productos, sino cargarlos por medio de una rutina y luego poder gestionar
+estos datos con la aplicación frontend
 

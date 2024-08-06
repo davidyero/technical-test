@@ -16,16 +16,6 @@
     "jsx": "react-jsx",
     "types": ["jest", "node", "@testing-library/react"],
   },
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.node.json"
-    }
-
-  ],
   "include": ["src", "**/*.test.ts", "**/*.test.tsx"]
 
 }

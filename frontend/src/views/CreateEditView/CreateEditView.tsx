@@ -1,14 +1,14 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { SuperInput } from '../../components/atoms/SuperInput/SuperInput.tsx'
+import { SuperInput } from '../../components/atoms/SuperInput/SuperInput'
 import './CreateEditView.scss'
 import { useTranslation } from 'react-i18next'
-import { SuperButton } from '../../components/atoms/SuperButton/SuperButton.tsx'
-import { SuperLoader } from '../../components/atoms/SuperLoader/SuperLoader.tsx'
+import { SuperButton } from '../../components/atoms/SuperButton/SuperButton'
+import { SuperLoader } from '../../components/atoms/SuperLoader/SuperLoader'
 import { IProducts } from '../../shared/interfaces/IProducts'
-import { useProducts } from '../../hooks/useProducts.ts'
+import { useProducts } from '../../hooks/useProducts'
 import LeftIcon from '../../assets/icons/left.svg'
-import { useNotifications } from '../../hooks/useNotifications.ts'
+import { useNotifications } from '../../hooks/useNotifications'
 
 export const CreateEditView = () => {
   const { showNotification } = useNotifications()
@@ -206,7 +206,7 @@ export const CreateEditView = () => {
               placeholder={t('price')}
               label={t('price')}
               value={String(price)}
-              onChange={e => setPrice(e.target.value)}
+              onChange={e => setPrice(e.target.value as unknown as number)}
             />
             <SuperInput
               className={'super-input'}

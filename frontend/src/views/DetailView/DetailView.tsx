@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next'
 import { ILanguageSupported } from '../../shared/interfaces/ILanguage'
 import './DetailView.scss'
 import LeftIcon from '../../assets/icons/left.svg'
-import { SuperLoader } from '../../components/atoms/SuperLoader/SuperLoader.tsx'
-import { SuperActionButtons } from '../../components/atoms/SuperActionButtons/SuperActionButtons.tsx'
+import { SuperLoader } from '../../components/atoms/SuperLoader/SuperLoader'
+import { SuperActionButtons } from '../../components/atoms/SuperActionButtons/SuperActionButtons'
 
 export const DetailView = () => {
   const { i18n, t } = useTranslation()

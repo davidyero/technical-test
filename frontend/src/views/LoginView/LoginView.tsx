@@ -1,18 +1,18 @@
 import './LoginView.scss'
-import { SuperCard } from '../../components/atoms/SuperCard/SuperCard.tsx'
-import { SuperButton } from '../../components/atoms/SuperButton/SuperButton.tsx'
-import { SuperInput } from '../../components/atoms/SuperInput/SuperInput.tsx'
-import { useAuth } from '../../hooks/useAuth.ts'
+import { SuperCard } from '../../components/atoms/SuperCard/SuperCard'
+import { SuperButton } from '../../components/atoms/SuperButton/SuperButton'
+import { SuperInput } from '../../components/atoms/SuperInput/SuperInput'
+import { useAuth } from '../../hooks/useAuth'
 import { useContext, useState } from 'react'
-import { useLocalStorage } from '../../hooks/useLocalStorage.ts'
+import { useLocalStorage } from '../../hooks/useLocalStorage'
 import {
   IS_GUEST,
   USER_STORAGE,
-} from '../../shared/constants/LocalStorages.constants.ts'
-import { AuthContext } from '../../context/AuthContext.tsx'
+} from '../../shared/constants/LocalStorages.constants'
+import { AuthContext } from '../../context/AuthContext'
 import { useTranslation } from 'react-i18next'
-import { RoleEnum } from '../../shared/enums/role.enum.ts'
-import {useNotifications} from "../../hooks/useNotifications.ts";
+import { RoleEnum } from '../../shared/enums/role.enum'
+import { useNotifications } from '../../hooks/useNotifications'
 
 export const LoginView = () => {
   const { t } = useTranslation()

@@ -1,5 +1,5 @@
-import { RoleEnum } from '../enums/role.enum.ts'
-import { IUser } from '../interfaces/IUser.ts'
+import { RoleEnum } from '../enums/role.enum'
+import { IUser } from '../interfaces/IUser'
 
 export const USER_JULIAN: IUser = {
   id: 'ABCD1234',

@@ -1,8 +1,8 @@
 import Modal from 'react-modal'
-import { SuperModalProps } from './SuperModal.type.ts'
-import { DataContext } from '../../../context/DataContext.tsx'
+import { SuperModalProps } from './SuperModal.type'
+import { DataContext } from '../../../context/DataContext'
 import { useContext } from 'react'
-import { SuperButton } from '../../atoms/SuperButton/SuperButton.tsx'
+import { SuperButton } from '../../atoms/SuperButton/SuperButton'
 import './SuperModal.scss'
 
 export const SuperModal = ({ children, ...props }: SuperModalProps) => {

@@ -1,4 +1,4 @@
-import { ILanguage } from './ILanguage.ts'
+import { ILanguage } from './ILanguage'
 
 export interface IProducts {
   id: string

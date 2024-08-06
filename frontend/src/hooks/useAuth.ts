@@ -1,7 +1,7 @@
-import { loginService } from '../services/auth.ts'
+import { loginService } from '../services/auth'
 import { useContext } from 'react'
-import { AuthContext } from '../context/AuthContext.tsx'
-import { useLocalStorage } from './useLocalStorage.ts'
+import { AuthContext } from '../context/AuthContext'
+import { useLocalStorage } from './useLocalStorage'
 
 export const useAuth = () => {
   const { setAuth } = useContext(AuthContext)

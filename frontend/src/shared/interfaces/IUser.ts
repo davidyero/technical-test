@@ -1,4 +1,4 @@
-import { RoleEnum } from '../enums/role.enum.ts'
+import { RoleEnum } from '../enums/role.enum'
 
 export interface IUser {
   id: string

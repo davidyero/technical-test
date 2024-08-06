@@ -1,10 +1,10 @@
 import { BrowserRouter } from 'react-router-dom'
-import { AuthContextProvider } from './context/AuthContext.tsx'
-import { ContentApp } from './views/ContentApp/ContentApp.tsx'
+import { AuthContextProvider } from './context/AuthContext'
+import { ContentApp } from './views/ContentApp/ContentApp'
 import { ReactNotifications } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
-import './translation/i18n.tsx'
-import { DataContextProvider } from './context/DataContext.tsx'
+import './translation/i18n'
+import { DataContextProvider } from './context/DataContext'
 
 function App() {
   return (
