@@ -1,6 +1,6 @@
 # Super Store
 
-##URL
+## URL
 https://davidyero.github.io/technical-test/
 
 ## Funcionamiento
