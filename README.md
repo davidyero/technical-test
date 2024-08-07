@@ -141,4 +141,4 @@ puesto que se tiene la base para hacerlo, lo tenia pensando en hacerlo similar a
 teniendo en cuenta más campos y que fueran los seleccionados en el filtro pero no alcance a desarrollarlo
 - Creación del backend con base de datos sin quemar los productos, sino cargarlos por medio de una rutina y luego poder gestionar
 estos datos con la aplicación frontend
-
+- Creación de Organismos y Templates para estabilizar, estandarizar y alinear todas las views/vistas/paginas de la aplicación
