@@ -8,6 +8,12 @@ Se realizó una distribución de carpetas de la forma presentada al ser un proye
 En caso de crecer se recomienda refactorizar esta distribución y orientarla a features, con esto
 el desarrollador identificará funcionalidades más fácil y es más sencillo identificar bugs.
 
+Se implementa Atomic Design como patrón estructural con el fin de tener una aplicación escalable a nivel de
+creación componentes, haciendolos reutilizables y en caso de necesitarse una modificación o actualización
+esta se verá en todos los componentes que tengan esa dependencia, también reduce la complejidad de creación
+de componentes puesto que se particionarán en lo más pequeños posibles (con cierto limite de especifidad o tamaño)
+pero que puedan ser reutilizables y den valor al proyecto
+
 Se trabajará con vite y su configuración básica, se configura babel para las pruebas unitarias, eslint y prettier
 para el analisis de código estático, mejor legibilidad y intellisense del IDE/Editor de código.
 
